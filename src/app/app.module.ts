@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,9 +10,14 @@ import { CurrentOptionComponent } from './current-option/current-option.componen
 
 import { LandingModule } from './landing/landing.module';
 import { MapaComponent } from './landing/mapa/mapa.component';
+import { TiposComponent } from './landing/tipos/tipos.component';
+
+import { TipoService } from './services/tipo.service';
 
 const appRoutes: Routes = [
   { path: '', component: MapaComponent },
+  { path: 'mapa', component: MapaComponent },
+  { path: 'tipo', component: TiposComponent },
 ];
 
 @NgModule({
@@ -24,11 +30,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     LandingModule,
+    HttpModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
-  providers: [],
+  providers: [TipoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
