@@ -1,14 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CurrentOptionComponent } from './current-option/current-option.component';
+
+import { LandingModule } from './landing/landing.module';
+import { MapaComponent } from './landing/mapa/mapa.component';
+
+const appRoutes: Routes = [
+  { path: '', component: MapaComponent },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    CurrentOptionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    LandingModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

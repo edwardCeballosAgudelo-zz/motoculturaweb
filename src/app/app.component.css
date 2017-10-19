@@ -1,0 +1,311 @@
+.icono-item {
+  width: 210px;
+}
+
+.header-mi-soat {
+  width: 100%;
+  text-align: center;
+}
+
+.head-bg-logo {
+  padding: 50px 0px;
+  width: 100%;
+  text-align: center;
+  background-color: aqua;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header-mi-soat .logo {
+  max-width: 282px;
+  width: 90%;
+}
+
+nav {
+  padding: 0px 0px;
+  background: #5F5DA9;
+  text-align: center;
+}
+
+nav .menu-soat {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: -5px;
+}
+
+nav .menu-soat li {
+  float: left;
+}
+
+nav .menu-soat li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+nav .menu-soat li a:hover {
+  background-color: #30458B;
+  cursor: pointer;
+}
+
+nav .menu-soat li .active {
+  background-color: #30458B;
+}
+
+nav .menu-soat-m {
+  width: 100%;
+  margin: 0;
+  padding: 5px 0px;
+  overflow: hidden;
+  display: inline-block;
+  background: #5F5DA9;
+  text-align: right;
+  display: none;
+  z-index: 222;
+  top: 0px;
+}
+
+nav .menu-soat-m .btn-menu-m {
+  margin-right: 5px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+nav .menu-soat-m .menu-title {
+  color: #fff;
+  float: left;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-top: 2px;
+  font-weight: 100;
+}
+
+.btn-menu-movil {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  border-top: 1px solid #ababab !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+}
+
+
+/* SECTION CONTENIDO HOME */
+
+.contenido-home {
+  width: 100%;
+  padding: 50px 0px;
+}
+
+.contenido-home p {
+  color: #909090;
+}
+
+.contenido-home h2 {
+  color: #30458B;
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+
+.contenido-home hr {
+  border: 2px solid #30458B;
+  margin-top: 10px;
+}
+
+/*FOOTER*/
+
+.footer-soat {
+  padding: 25px 0px;
+  width: 100%;
+  text-align: center;
+  background-color: aqua;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.menu-footer {
+  text-align: left;
+  list-style-type: none;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.menu-footer li {}
+
+.menu-footer li a {
+  color: #000;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 2px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.footer-copy-right {
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  padding: 3px;
+  font-size: 12px;
+}
+
+.footer-copy-right span {
+  color: #fff;
+}
+
+/*QUE ES SOAT*/
+.cuerpo-accordion {
+  display: none;
+  width: 100%;
+}
+
+.titulo-accordion {
+  cursor: pointer;
+  line-height: 29px;
+  font-size: 19px;
+  color: #30458b;
+  font-weight: 400;
+}
+
+.titulo-accordion img {
+  width: 24px;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.titulo-tabla-q-e-s {
+  text-align: center;
+  background: #5d5da9;
+  color: #fff;
+}
+
+.image-slide {
+  display: inline-block !important;
+  width: 78% !important;
+  float: none !important;
+}
+
+.p-instrucciones {
+  height: 50px;
+}
+
+.contain_apps {
+  text-align: center;
+  background: #eaeaea;
+  border-radius: 9px;
+  padding: 10px;
+  margin-top: 58px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #b1b0dc;
+}
+
+.item-enlaces-1 {
+  margin-left: 15%;
+}
+
+.aseguradora-item img {
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.aseguradora-item img:hover {
+  -webkit-filter: grayscale(0%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+
+.menu-footer img {
+  width: 25px;
+  margin-right: 6px;
+  margin-top: -5px;
+}
+
+.contain-logo-footer {
+  text-align: right;
+  padding-top: 26px;
+  padding-right: 20px;
+}
+
+.contain-copyright {
+  text-align: left;
+  border-left: 2px solid #fff;
+  height: 100px;
+  padding-left: 20px;
+  color: #fff;
+}
+
+.contain_apps h2 {
+  margin-bottom: 20px;
+}
+
+.contain_apps img {
+  width: 240px;
+  margin-top: 10px;
+}
+
+.callbacks_container {
+  display: inline-block;
+  float: none;
+}
+
+.contain-instrucciones {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.rslides {
+  display: inline-block;
+  float: none;
+}
+
+.rslides ul li {
+  float: none;
+  text-align: center;
+}
+
+.texto-slide-principal {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 990px) {
+  .menu-soat-d {
+    display: none;
+  }
+  nav .menu-soat-m {
+    display: block;
+  }
+  .item-enlaces-1 {
+    margin-left: 0px;
+  }
+  .item-enlaces {
+    margin-bottom: 20px;
+  }
+  .image-slide {
+    width: 90% !important;
+  }
+  .p-instrucciones {
+    height: auto;
+    font-size: 12px;
+  }
+  .contain_apps {
+    min-height: auto;
+    height: auto;
+  }
+  .slide-instrucciones {
+    height: auto;
+  }
+}

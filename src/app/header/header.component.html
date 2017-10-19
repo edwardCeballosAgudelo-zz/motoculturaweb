@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="head-bg-logo">
+    <img src="assets/images/logo.png" class="logo">
+  </div>
+  <nav>
+    <div class="container menu-d">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="menu">
+            <li>
+              <a routerLink="inicio" routerLinkActive="active">Mapa</a>
+            </li>
+            <li>
+              <a routerLink="queSoat" routerLinkActive="active">Puntos de Accidentes</a>
+            </li>
+            <li>
+              <a routerLink="poliza" routerLinkActive="active">Tipos de Normas</a>
+            </li>
+            <li>
+              <a routerLink="aseguradora" routerLinkActive="active">Usuarios</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="menu-m">
+      <span class="menu-title">Menú</span>
+      <a class="btn btn-default btn-m" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+        aria-controls="collapseExample">
+          <i class="glyphicon glyphicon-menu-hamburger"></i>
+      </a>
+      <div class="collapse" id="collapseExample" style="margin-top: 10px;">
+        <div>
+          <a routerLink="inicio" class="btn btn-default btn-menu-movil">Mapa</a>
+          <a routerLink="queSoat" class="btn btn-default btn-menu-movil">Puntos de Accidentes</a>
+          <a routerLink="poliza" class="btn btn-default btn-menu-movil">Tipos de Normas</a>
+          <a routerLink="aseguradora" class="btn btn-default btn-menu-movil">Usuarios</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
