@@ -11,13 +11,19 @@ import { CurrentOptionComponent } from './current-option/current-option.componen
 import { LandingModule } from './landing/landing.module';
 import { MapaComponent } from './landing/mapa/mapa.component';
 import { TiposComponent } from './landing/tipos/tipos.component';
+import { PuntosComponent } from './landing/puntos/puntos.component';
+import { UsersComponent } from './landing/users/users.component';
 
 import { TipoService } from './services/tipo.service';
+import { PuntosService } from './services/puntos.service';
+import { UsersService } from './services/users.service';
 
 const appRoutes: Routes = [
   { path: '', component: MapaComponent },
   { path: 'mapa', component: MapaComponent },
   { path: 'tipo', component: TiposComponent },
+  { path: 'puntos', component: PuntosComponent },
+  { path: 'users', component: UsersComponent },
 ];
 
 @NgModule({
@@ -35,7 +41,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [TipoService],
+  providers: [TipoService, PuntosService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

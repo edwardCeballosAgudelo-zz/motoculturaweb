@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { TipoService } from '../../services/tipo.service';
 import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users.service';
 
 declare var jquery: any;
 declare var $: any;
 
 @Component({
-  selector: 'app-tipos',
-  templateUrl: './tipos.component.html',
-  styleUrls: ['./tipos.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class TiposComponent implements OnInit {
+export class UsersComponent implements OnInit {
+
   idEdit: any;
   descriptionEdit: any;
   nameEdit: any;
@@ -18,56 +19,56 @@ export class TiposComponent implements OnInit {
   name: string;
   tipoNormas: any;
 
-  constructor(public tipoServices: TipoService) { }
+  constructor(public userServices: UsersService) { }
 
   ngOnInit() {
-    this.getTypeNormas();
+    this.getUsers();
   }
 
-  getTypeNormas() {
-    this.tipoServices.getTypeNormas().then((tipoNorma) => {
-      const respuesta = JSON.parse(tipoNorma['_body']);
+  getUsers() {
+    this.userServices.getUsers().then((user) => {
+      const respuesta = JSON.parse(user['_body']);
       this.tipoNormas = respuesta.normaTypes;
     }).catch((err) => {
       console.log(err);
     });
   }
 
-  saveTypeNormas(myForm: NgForm) {
+  saveUser(myForm: NgForm) {
     const postParams = {
       name : myForm.value.name,
       descripcion: myForm.value.description
     };
 
-    this.tipoServices.newTypeNormas(postParams).then((typeNorma) => {
+    this.userServices.newUser(postParams).then((typeNorma) => {
       alert(typeNorma['statusText']);
       $('#addModal').modal('hide');
-      this.getTypeNormas();
+      this.getUsers();
     }).catch((err) => {
       console.log(err);
     });
   }
 
-  deleteTypeNormas() {
-    this.tipoServices.deleteTypeNorma(this.idErase).then((typeNorma) => {
-      const respuesta = JSON.parse(typeNorma['_body']);
+  deleteUser() {
+    this.userServices.deleteUser(this.idErase).then((user) => {
+      const respuesta = JSON.parse(user['_body']);
       $('#deleteModal').modal('hide');
-      this.getTypeNormas();
+      this.getUsers();
     }).catch((err) => {
       console.log(err);
     });
   }
 
-  updateTypeNorma(editForm: NgForm) {
+  updateUser(editForm: NgForm) {
     const postParams = {
       id: this.idEdit,
       name : editForm.value.nameEdit,
       descripcion: editForm.value.descriptionEdit
     };
-    this.tipoServices.updateTypeNormas(postParams).then((typeNorma) => {
+    this.userServices.updateUser(postParams).then((typeNorma) => {
       alert(typeNorma['statusText']);
       $('#editModal').modal('hide');
-      this.getTypeNormas();
+      this.getUsers();
     }).catch((err) => {
       console.log(err);
     });
@@ -82,4 +83,5 @@ export class TiposComponent implements OnInit {
     this.nameEdit = item.nombre;
     this.descriptionEdit = item.descripcion;
   }
+
 }
