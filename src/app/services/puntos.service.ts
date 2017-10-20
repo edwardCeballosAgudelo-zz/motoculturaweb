@@ -24,7 +24,7 @@ export class PuntosService {
     });
 
     return new Promise((resolve, reject) => {
-      this.http.get('https://api-rest-edward.herokuapp.com/api/punto', optionspost)
+      this.http.get('http://localhost:3001/api/punto', optionspost)
         .subscribe(res => {
           resolve(res);
         }, (err) => {

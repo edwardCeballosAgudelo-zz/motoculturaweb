@@ -11,13 +11,13 @@ declare var $: any;
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  users: any;
 
   idEdit: any;
   descriptionEdit: any;
   nameEdit: any;
   idErase: any;
   name: string;
-  tipoNormas: any;
 
   constructor(public userServices: UsersService) { }
 
@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
   getUsers() {
     this.userServices.getUsers().then((user) => {
       const respuesta = JSON.parse(user['_body']);
-      this.tipoNormas = respuesta.normaTypes;
+      this.users = respuesta.users;
     }).catch((err) => {
       console.log(err);
     });

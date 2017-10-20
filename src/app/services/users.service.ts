@@ -24,7 +24,7 @@ export class UsersService {
     });
 
     return new Promise((resolve, reject) => {
-      this.http.get('https://api-rest-edward.herokuapp.com/api/punto', optionspost)
+      this.http.get('https://api-rest-edward.herokuapp.com/api/user', optionspost)
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -50,7 +50,7 @@ export class UsersService {
     });
 
     return new Promise((resolve, reject) => {
-      this.http.post('https://api-rest-edward.herokuapp.com/api/punto', body, optionspost)
+      this.http.post('https://api-rest-edward.herokuapp.com/api/user', body, optionspost)
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -70,7 +70,7 @@ export class UsersService {
     });
 
     return new Promise((resolve, reject) => {
-      this.http.delete('https://api-rest-edward.herokuapp.com/api/punto/' + id, optionspost)
+      this.http.delete('https://api-rest-edward.herokuapp.com/api/user/' + id, optionspost)
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -93,7 +93,7 @@ export class UsersService {
     });
 
     return new Promise((resolve, reject) => {
-      this.http.put('https://api-rest-edward.herokuapp.com/api/punto/' + postParams.id, body, optionspost)
+      this.http.put('https://api-rest-edward.herokuapp.com/api/user/' + postParams.id, body, optionspost)
         .subscribe(res => {
           resolve(res);
         }, (err) => {
