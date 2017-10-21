@@ -20,17 +20,26 @@ export class PuntosComponent implements OnInit {
   nameEdit: any;
   puntosAccidentes: any;
 
-  constructor(public puntoServices: PuntosService) { }
+  constructor(public puntoServices: PuntosService) {
+  }
 
   ngOnInit() {
     this.getPuntosAccidentes();
+    $('#addModal').formValidation({
+      framework: 'bootstrap',
+      excluded: ':disabled',
+      icon: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      }
+    });
   }
 
   getPuntosAccidentes() {
     this.puntoServices.getPuntosAccidentes().then((punto) => {
       const respuesta = JSON.parse(punto['_body']);
       this.puntosAccidentes = respuesta.accidentPoints;
-      console.log(this.puntosAccidentes);
     }).catch((err) => {
       console.log(err);
     });
@@ -38,7 +47,7 @@ export class PuntosComponent implements OnInit {
 
   savePuntoAccidente(myForm: NgForm) {
     const postParams = {
-      nombre : myForm.value.name,
+      nombre: myForm.value.name,
       descripcion: myForm.value.description,
       longitud: myForm.value.longitud,
       latitud: myForm.value.latitud,
@@ -67,7 +76,7 @@ export class PuntosComponent implements OnInit {
   updatePuntoAccidente(editForm: NgForm) {
     const postParams = {
       id: this.idEdit,
-      name : editForm.value.nameEdit,
+      name: editForm.value.nameEdit,
       descripcion: editForm.value.descriptionEdit
     };
     this.puntoServices.updatePuntoAccidente(postParams).then((typeNorma) => {
@@ -80,7 +89,7 @@ export class PuntosComponent implements OnInit {
   }
 
   changeId(id) {
-     this.idErase = id;
+    this.idErase = id;
   }
 
   changeData(item) {
@@ -92,4 +101,9 @@ export class PuntosComponent implements OnInit {
     this.distanciaEdit = item.distancia;
   }
 
+  limpiarValidator() {
+    $('#addModal').on('hidden.bs.modal', function() {
+      $('#addForm').formValidation('resetForm', true);
+    });
+  }
 }

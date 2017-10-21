@@ -25,8 +25,23 @@ export class MapaComponent implements OnInit {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     directionsDisplay.setMap(this.map);
-    this.getPuntosAccidentes();
 
+    let myLatLng2;
+    const mapa = this.map;
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+       myLatLng2 = {lat: position.coords.latitude, lng: position.coords.longitude};
+       const image = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+
+       const marker = new google.maps.Marker({
+         position: myLatLng2,
+         map: mapa,
+         icon: image
+       });
+    });
+
+
+    this.getPuntosAccidentes();
   }
 
   getPuntosAccidentes() {
@@ -36,12 +51,10 @@ export class MapaComponent implements OnInit {
 
       for (let i = 0; i < this.puntosAccidentes.length; i++) {
         const element = this.puntosAccidentes[i];
-        console.log(element);
         const myLatLng = {lat: element.latitud, lng: element.longitud};
         const marker = new google.maps.Marker({
           position: myLatLng,
-          map: this.map,
-          title: 'Hello World!'
+          map: this.map
         });
       }
 

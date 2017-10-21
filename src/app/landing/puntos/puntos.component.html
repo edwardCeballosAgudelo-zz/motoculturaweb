@@ -8,7 +8,7 @@
           </h2>
         </div>
         <div class="col-sm-6">
-          <a href="#addModal" class="btn btn-success" data-toggle="modal">
+          <a href="#addModal" class="btn btn-success" data-toggle="modal" (click)="limpiarValidator()" >
             <i class="material-icons">&#xE147;</i>
             <span>Adiccionar Punto de Accidente</span>
           </a>
@@ -45,11 +45,12 @@
     </table>
   </div>
 </div>
+
 <!-- Edit Modal HTML -->
-<div id="addModal" class="modal fade">
+<div id="addModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form #form="ngForm" (ngSubmit)="savePuntoAccidente(form)">
+      <form #form="ngForm" (ngSubmit)="savePuntoAccidente(form)" id="addForm">
         <div class="modal-header" >
           <h4 class="modal-title">Crear tipo de accidente</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -65,15 +66,15 @@
           </div>
           <div class="form-group" >
             <label>Longitud</label>
-            <input type="text" class="form-control" name="longitud" ngModel required>
+            <input type="number" class="form-control" name="longitud" ngModel required>
           </div>
           <div class="form-group">
             <label>Latitud</label>
-            <input type="email" class="form-control" name="latitud" ngModel required>
+            <input type="number" class="form-control" name="latitud" ngModel required>
           </div>
           <div class="form-group" >
             <label>Distancia</label>
-            <input type="text" class="form-control" name="distancia" ngModel required>
+            <input type="number" class="form-control" name="distancia" ngModel required>
           </div>
         </div>
         <div class="modal-footer">
