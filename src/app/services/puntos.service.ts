@@ -81,7 +81,10 @@ export class PuntosService {
 
   public updatePuntoAccidente(postParams) {
     const body = 'nombre=' + postParams.name +
-     '&descripcion=' + postParams.descripcion;
+     '&descripcion=' + postParams.descripcion +
+     '&longitud=' + postParams.longitud +
+     '&latitud=' + postParams.latitud +
+     '&distancia=' + postParams.distancia;
 
     this.headersPost = new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',

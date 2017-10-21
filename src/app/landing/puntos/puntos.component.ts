@@ -77,7 +77,10 @@ export class PuntosComponent implements OnInit {
     const postParams = {
       id: this.idEdit,
       name: editForm.value.nameEdit,
-      descripcion: editForm.value.descriptionEdit
+      descripcion: editForm.value.descriptionEdit,
+      longitud: editForm.value.longitudEdit,
+      latitud: editForm.value.latitudEdit,
+      distancia: editForm.value.distanciaEdit
     };
     this.puntoServices.updatePuntoAccidente(postParams).then((typeNorma) => {
       alert(typeNorma['statusText']);
